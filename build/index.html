@@ -8,6 +8,7 @@
 		<link rel="stylesheet" href="assets/css/mainstyle.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"/>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 		<script src="assets/js/slick.min.js"></script>
+		<script src="assets/js/parallax.min.js"></script>
 		<script src="assets/js/common.js"></script><script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 	</head>
 	<body>
@@ -27,7 +28,7 @@
 <path d="M619.47,283.141q-.345,1.611-.69,3.221-1.017,4.787-2.033,9.574a1.8,1.8,0,0,1-.243.654.745.745,0,0,1-.847.334,1.644,1.644,0,0,1-.612-.293q-1.893-1.4-3.787-2.8c-.133-.1-.21-.108-.337.017-.631.621-1.274,1.23-1.912,1.844a.989.989,0,0,1-.574.308c-.139.016-.208-.029-.2-.181.034-.48.061-.96.094-1.44.032-.46.069-.92.1-1.38.027-.376.056-.752.079-1.128a.348.348,0,0,1,.157-.236q1.289-1.167,2.579-2.331l3.827-3.454q.515-.465,1.028-.931a1.588,1.588,0,0,0,.137-.139.117.117,0,0,0,.031-.142.152.152,0,0,0-.154-.064.944.944,0,0,0-.436.158l-3.554,2.237q-2.876,1.81-5.75,3.623a.356.356,0,0,1-.328.045q-1.917-.606-3.836-1.2a1.543,1.543,0,0,1-.543-.258.437.437,0,0,1-.052-.7,1.461,1.461,0,0,1,.566-.373q2.147-.834,4.3-1.662l11.86-4.566c.024-.009.047-.022.07-.033.319,0,.638,0,.957,0,.084,0,.1.016.1.1C619.467,282.347,619.47,282.744,619.47,283.141Z" transform="translate(-601.472 -281.849)"/>
 </svg></a></li>
 					</ul>
-					<button class="btn">Заказать звонок</button>
+					<button class="btn btn-phone" data-fancybox data-src="#call-me">Заказать звонок</button>
 				</div>
 			</div>
 		</header>
@@ -200,10 +201,11 @@
 </svg>
 						</button>
 					</div>
-					<button class="btn btn_block">Оценить моё авто</button>
+					<button class="btn btn_block" data-fancybox data-src="#check-my-auto">Оценить моё авто</button>
 				</div>
 			</section>
 			<section class="block ways-of-selling">
+				<div class="ways-of-selling-parallax parallax-window" data-parallax="scroll" data-image-src="assets/img/ways-of-selling-background.png"></div>
 				<div class="container">
 					<h2 class="headline headline_block">Сравните способы продажи авто</h2>
 					<ul class="accordion">
@@ -269,10 +271,10 @@
 						<p>Получите бесплатную оценку, отправив мне фото автомобиля в <a href="">WhatsApp </a>или <a href="">Viber</a>, или <a href="">Telegram</a>.</p>
 						<p>Я изучу снимки и предоставлю оценку в течении 10 минут.</p>
 					</div>
-					<button class="btn btn_block">Узнать оценку</button>
+					<button class="btn btn_block" data-fancybox data-src="#check-my-auto">Узнать оценку</button>
 				</div>
 			</section>
-			<section class="block examples-of-jobs">
+			<section class="block examples-of-jobs js--examples-of-jobs">
 				<div class="container">
 					<h2 class="headline headline_block">Примеры моей работы</h2>
 					<ul class="examples-of-jobs-list">
@@ -304,7 +306,7 @@
 						<p>Я знаю, что многие продают машину по причине смены автомобиля или для ипотечного взноса.</p>
 						<p>Своим клиентам всегда стараюсь сделать небольшой и полезный презент при <strong>заключении договора.</strong></p>
 					</div>
-					<button class="btn btn_block">Хочу подарок</button>
+					<button class="btn btn_block" data-fancybox data-src="#gift">Хочу подарок</button>
 				</div>
 			</section>
 			<section class="block">
@@ -332,7 +334,7 @@
 					</div>
 				</div>
 			</section>
-			<section class="block statistics">
+			<section class="block statistics parallax-window" data-parallax="scroll" data-image-src="assets/img/statistics-background.jpg">
 				<div class="container">
 					<h2 class="headline headline_block headline_white">Какие авто меня интересуют прямо сейчас?</h2>
 					<div class="statistics-headlines"><span>состояние</span><span>заказов в работе</span></div>
@@ -342,9 +344,86 @@
 						<li class="statistics-list__item"><span>Битые</span><span>5</span></li>
 						<li class="statistics-list__item"><span>Авто с пробегом</span><span>2</span></li>
 					</ul>
-					<button class="btn btn_block">Оценить моё авто</button>
+					<button class="btn btn_block" data-fancybox data-src="#check-my-auto">Оценить моё авто</button>
 				</div>
 			</section>
+			<!-- Модалки-->
+			<div class="modal" id="call-me">
+				<form class="form" action="">
+					<h3 class="form__headline">Перезвоню в течение пяти минут</h3>
+					<label class="form__input">
+						<input type="tel" name="" placeholder="Телефон *" required>
+					</label>
+					<input class="btn form__btn" type="submit" value="Перезвоните мне">
+				</form>
+			</div>
+			<div class="modal" id="check-my-auto">
+				<form class="form" action="">
+					<h3 class="form__headline">Оцените моё авто</h3>
+					<label class="form__input">
+						<input type="tel" name="" placeholder="Телефон *" required>
+					</label>
+					<label class="form__input">
+						<input type="text" name="" placeholder="Марка и модель авто">
+					</label>
+					<label class="form__file">
+						<input type="file" name="">
+					</label>
+					<input class="btn form__btn" type="submit" value="Узнать оценку">
+					<label class="form__checkbox">
+						<input type="checkbox" name="" checked><span>Нажимая на кнопку, Вы соглашаетесьна обработку персональных данных</span>
+					</label>
+				</form>
+			</div>
+			<div class="modal" id="gift">
+				<form class="form" action="">
+					<h3 class="form__headline">Хочу получить подарок</h3>
+					<label class="form__input">
+						<input type="tel" name="" placeholder="Телефон *" required>
+					</label>
+					<label class="form__input">
+						<input type="text" name="" placeholder="Марка и модель авто">
+					</label>
+					<input class="btn form__btn" type="submit" value="Получить подарок">
+					<label class="form__checkbox">
+						<input type="checkbox" name="" checked><span>Нажимая на кнопку, Вы соглашаетесьна обработку персональных данных</span>
+					</label>
+				</form>
+			</div>
+			<div class="modal" id="delay-form">
+				<div class="delay-form">
+					<div class="delay-form-content">
+						<h3 class="delay-form-headline">Задержитесь на </br><strong>30 секунд</strong></h3>
+						<p>Доверив мне автомобиль:</p>
+						<ol>
+							<li>Вы экономите <strong>время и нервы</strong></li>
+							<li>Получите <strong>максимально выгодное предложение </strong>в Перми</li>
+							<li>Ограничите себя от <b>шквала звонков неадекватных перекупов</b></li>
+							<li>Получите небольшой <strong>подарок </strong>от меня</li>
+							<li>Общение со мной займет у вас не более <strong>10 минут</strong></li>
+						</ol>
+					</div>
+					<form class="form" action="">
+						<h3 class="form__headline">Предложите свою цену за авто</h3>
+						<label class="form__input">
+							<input type="tel" name="" placeholder="Телефон *" required>
+						</label>
+						<label class="form__input">
+							<input type="text" name="" placeholder="Марка и модель авто">
+						</label>
+						<label class="form__input">
+							<input type="number" name="" placeholder="Ваша цена">
+						</label>
+						<label class="form__file">
+							<input type="file" name="">
+						</label>
+						<input class="btn form__btn" type="submit" value="Узнать цену">
+						<label class="form__checkbox">
+							<input type="checkbox" name="" checked><span>Нажимая на кнопку, Вы соглашаетесьна обработку персональных данных</span>
+						</label>
+					</form>
+				</div>
+			</div>
 		</main>
 		<footer>
 			<div class="footer-content">
@@ -370,7 +449,7 @@
 						<li class="footer-list__item"><span class="footer-list__item-desc">Адрес:</span><span class="footer-list__item-point">Ленина 1</span></li>
 					</ul>
 					<div class="footer-under"><span>Автоподбор в Перми и  Пермском крае</span>
-						<button class="btn">Заказать звонок</button>
+						<button class="btn" data-fancybox data-src="#gift">Заказать звонок</button>
 					</div>
 				</div>
 			</div>

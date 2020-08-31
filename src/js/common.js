@@ -39,6 +39,37 @@ $(document).ready(function() {
         $(this).closest('.js--documents').find('.js--documents-photos__item').eq($(this).index()).addClass('active');
     });
 
+    // Параллакс
+    // $('.js--ways-of-selling').parallax({imageSrc: '../img/ways-of-selling-background.png'});
+
+    // Модалка
+    function openModal() {
+        $.fancybox.open($('#delay-form'));
+    }
+    
+    setTimeout(() => {
+        if (counter == 0) {
+            openModal();
+            counter = 1;
+        }
+    }, 45000);
+
+    let examplesOfJobs = $('.js--examples-of-jobs');
+    let counter = 0;
+
+    $(window).scroll(function() {
+        let scroll = $(window).scrollTop() + $(window).height();
+        //Если скролл до конца елемента
+        var offset = examplesOfJobs.offset().top + examplesOfJobs.height();
+        //Если скролл до начала елемента
+        // let offset = $element.offset().top
+        
+        if (scroll > offset && counter == 0) {
+            openModal()
+            counter = 1;
+        }
+    });
+
     // Маска для ввода телефона в формах
     function number_format( number, decimals, dec_point, thousands_sep ) {	// Format a number with grouped thousands
         // 
